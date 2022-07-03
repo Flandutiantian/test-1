@@ -103,25 +103,75 @@ parcelRequire = (function (modules, cache, entry, globalName) {
 
   // Override the current require with this new one
   return newRequire;
-})({"test.js":[function(require,module,exports) {
-var string = '\n.skin *{box-sizing:border-box;margin:0;padding:0;}\n.skin *::before, .skin *::after{box-sizing:border-box;}\n.skin{\n    position:relative;\n    background:#ffe600;\n    min-height:50vh;\n}\n.nose{\n    /* border:10px solid red;\n    border-color:black transparent  transparent;\n    border-bottom:none;\n    width:0px;\n    height:0px;\n    position:relative;\n    left:50%;\n    top:145px;\n    margin-left:-10px;\n    z-index: 10; */\n    border:14px solid red;\n    border-color:black transparent  transparent;\n    border-bottom:none;\n    width:0px;\n    height:10px;\n    position:relative;\n    left:50%;\n    top:145px;\n    margin-left:-14px;\n    z-index: 10;\n    border-radius: 100%;\n}\n@keyframes wave{\n    0%{\n        transform: rotate(0deg);\n    }\n    33%{\n        transform: rotate(5deg);\n    }\n    66%{\n        transform: rotate(-5deg);\n    }\n    100%{\n        transform: rotate(0deg);\n    }\n}\n.nose:hover{\n    transform-origin: center bottom;\n    animation: wave 200ms infinite linear;\n}\n/* .yuan{\n    position: absolute;\n    width:20px;\n    height:6px;\n    top:-15px;\n    left:-10px;\n    border-radius: 40px 40px 0 0;\n    background: black;\n} */\n.eye{\n    border: 2px solid black;\n    width: 64px;\n    height: 64px;\n    position:absolute;\n    left:50%;\n    top:100px;\n    margin-left:-32px;\n    background: #2e2e2e;\n    border-radius: 50%;\n}\n.eye.left{\n    transform: translateX(-100px);\n}\n.eye.right{\n    transform: translateX(100px);\n}\n.eye::before{\n    content: \'\';\n    border: 2px solid #000;\n    width:30px;\n    height:30px;\n    display:block;\n    background: #fff;\n    border-radius: 50%;\n    position:relative;\n    left:4px;\n    top:2px;\n}\n.mouth{\n    width:200px;\n    height:100px;\n    position:absolute;\n    left:50%;\n    top: 175px;\n    margin-left: -100px;\n}\n.mouth .up{\n    position:relative;\n    top:-10px; \n    /* z-index: 1;  */\n}\n.mouth .up .lip{\n    border:3px solid black;   \n    height:30px;\n    width:90px;\n    border-top-color: transparent; \n    /* border-right-color:transparent; */\n    position:relative;\n    z-index: 2;\n    background:#ffe600;\n}\n.mouth .up .lip.left{  \n    border-right:none;  \n    border-radius: 100%;   \n    transform: rotate(-10deg);\n    /* \u503E\u659C20\u5EA6 */\n    margin-left: 11px;\n}\n.mouth .up .lip.right{\n    border-left:none;   \n    border-radius: 50%;\n    transform: rotate(10deg);\n    /* \u503E\u659C20\u5EA6 */\n    left:99px;\n    bottom:30px;\n}\n.mouth .down{\n    height:170px;\n    position:absolute;\n    top:0px;\n    width:100%;\n    overflow:hidden;\n}\n.mouth .down .yuan1{\n    border: 3px solid black;\n    height:1200px;\n    width:100%;\n    position:absolute;\n    bottom:0;\n    left:50px;\n    margin-left: -50px;\n    border-radius: 50%;\n    background: #9b000a;\n    overflow: hidden;\n}\n.mouth .down .yuan1 .yuan2{\n    width:200px;\n    height:300px;\n    position: absolute;\n    bottom:-160px;\n    left:50%;\n    margin-left: -100px; \n    background:#ff485f;\n    border-radius: 100%;\n}\n.face{\n    position:absolute;\n    left:50%;\n    border: 3px solid #000;\n    width:88px;\n    height:88px;\n    top:200px;\n    margin-left: -44px;\n    z-index: 3;\n}\n.face > img{\n    position: absolute;\n    top:50%;\n    left:50%;\n}\n\n.face.left > img{\n    transform: rotateY(180deg);\n    transform-origin: 0 0;\n}\n.face.left{\n    transform: translateX(-180px);\n    background: #f00;\n    border-radius: 50%;\n}\n.face.right{\n    transform: translateX(180px);\n    background: #f00;\n    border-radius: 50%;\n}\n';
-var n = 1;
-demo.innerText = string.substr(0, n);
-demo2.innerHTML = string.substr(0, n);
-console.log(n);
+})({"css.js":[function(require,module,exports) {
+"use strict";
 
-var id = setInterval(function () {
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+var string = "\n.skin *{box-sizing:border-box;margin:0;padding:0;}\n.skin *::before, .skin *::after{box-sizing:border-box;}\n.skin{\n    position:relative;\n    background:#ffe600;\n    min-height:50vh;\n}\n.nose{\n    /* border:10px solid red;\n    border-color:black transparent  transparent;\n    border-bottom:none;\n    width:0px;\n    height:0px;\n    position:relative;\n    left:50%;\n    top:145px;\n    margin-left:-10px;\n    z-index: 10; */\n    border:14px solid red;\n    border-color:black transparent  transparent;\n    border-bottom:none;\n    width:0px;\n    height:10px;\n    position:relative;\n    left:50%;\n    top:145px;\n    margin-left:-14px;\n    z-index: 10;\n    border-radius: 100%;\n}\n@keyframes wave{\n    0%{\n        transform: rotate(0deg);\n    }\n    33%{\n        transform: rotate(5deg);\n    }\n    66%{\n        transform: rotate(-5deg);\n    }\n    100%{\n        transform: rotate(0deg);\n    }\n}\n.nose:hover{\n    transform-origin: center bottom;\n    animation: wave 200ms infinite linear;\n}\n/* .yuan{\n    position: absolute;\n    width:20px;\n    height:6px;\n    top:-15px;\n    left:-10px;\n    border-radius: 40px 40px 0 0;\n    background: black;\n} */\n.eye{\n    border: 2px solid black;\n    width: 64px;\n    height: 64px;\n    position:absolute;\n    left:50%;\n    top:100px;\n    margin-left:-32px;\n    background: #2e2e2e;\n    border-radius: 50%;\n}\n.eye.left{\n    transform: translateX(-100px);\n}\n.eye.right{\n    transform: translateX(100px);\n}\n.eye::before{\n    content: '';\n    border: 2px solid #000;\n    width:30px;\n    height:30px;\n    display:block;\n    background: #fff;\n    border-radius: 50%;\n    position:relative;\n    left:4px;\n    top:2px;\n}\n.mouth{\n    width:200px;\n    height:100px;\n    position:absolute;\n    left:50%;\n    top: 175px;\n    margin-left: -100px;\n}\n.mouth .up{\n    position:relative;\n    top:-10px; \n    /* z-index: 1;  */\n}\n.mouth .up .lip{\n    border:3px solid black;   \n    height:30px;\n    width:90px;\n    border-top-color: transparent; \n    /* border-right-color:transparent; */\n    position:relative;\n    z-index: 2;\n    background:#ffe600;\n}\n.mouth .up .lip.left{  \n    border-right:none;  \n    border-radius: 100%;   \n    transform: rotate(-10deg);\n    /* \u503E\u659C20\u5EA6 */\n    margin-left: 11px;\n}\n.mouth .up .lip.right{\n    border-left:none;   \n    border-radius: 50%;\n    transform: rotate(10deg);\n    /* \u503E\u659C20\u5EA6 */\n    left:99px;\n    bottom:30px;\n}\n.mouth .down{\n    height:170px;\n    position:absolute;\n    top:0px;\n    width:100%;\n    overflow:hidden;\n}\n.mouth .down .yuan1{\n    border: 3px solid black;\n    height:1200px;\n    width:100%;\n    position:absolute;\n    bottom:0;\n    left:50px;\n    margin-left: -50px;\n    border-radius: 50%;\n    background: #9b000a;\n    overflow: hidden;\n}\n.mouth .down .yuan1 .yuan2{\n    width:200px;\n    height:300px;\n    position: absolute;\n    bottom:-160px;\n    left:50%;\n    margin-left: -100px; \n    background:#ff485f;\n    border-radius: 100%;\n}\n.face{\n    position:absolute;\n    left:50%;\n    border: 3px solid #000;\n    width:88px;\n    height:88px;\n    top:200px;\n    margin-left: -44px;\n    z-index: 3;\n}\n.face > img{\n    position: absolute;\n    top:50%;\n    left:50%;\n}\n\n.face.left > img{\n    transform: rotateY(180deg);\n    transform-origin: 0 0;\n}\n.face.left{\n    transform: translateX(-180px);\n    background: #f00;\n    border-radius: 50%;\n}\n.face.right{\n    transform: translateX(180px);\n    background: #f00;\n    border-radius: 50%;\n}\n";
+exports.default = string;
+},{}],"test.js":[function(require,module,exports) {
+'use strict';
+
+var _css = require('./css.js');
+
+var _css2 = _interopRequireDefault(_css);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var demo = document.querySelector('#demo');
+var demo2 = document.querySelector('#demo2');
+
+var n = 1;
+var time = 100;
+
+var run = function run() {
     n += 1;
-    if (n > string.length) {
+    if (n > _css2.default.length) {
         window.clearInterval(id);
         return;
     }
-    console.log(n + ':' + string.substr(0, n));
-    demo.innerText = string.substr(0, n);
-    demo2.innerHTML = string.substr(0, n);
+    demo.innerText = _css2.default.substr(0, n);
+    demo2.innerHTML = _css2.default.substr(0, n);
     demo.scrollTop = demo.scrollHeight;
-}, 10);
-},{}],"C:\\Users\\86173\\AppData\\Local\\Yarn\\Data\\global\\node_modules\\parcel\\src\\builtins\\hmr-runtime.js":[function(require,module,exports) {
+};
+
+var play = function play() {
+    return setInterval(run, time);
+};
+var pause = function pause() {
+    window.clearInterval(id);
+};
+
+var id = play();
+
+btnPause.onclick = function () {
+    pause();
+};
+
+btnPlay.onclick = function () {
+    id = play();
+};
+
+btnSlow.onclick = function () {
+    pause();
+    time = 200;
+    id = play();
+};
+
+btnNormal.onclick = function () {
+    pause();
+    time = 80;
+    id = play();
+};
+
+btnFast.onclick = function () {
+    pause();
+    time = 0;
+    id = play();
+};
+},{"./css.js":"css.js"}],"C:\\Users\\86173\\AppData\\Local\\Yarn\\Data\\global\\node_modules\\parcel\\src\\builtins\\hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 
@@ -150,7 +200,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = '' || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + '64140' + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + '54118' + '/');
   ws.onmessage = function (event) {
     var data = JSON.parse(event.data);
 
